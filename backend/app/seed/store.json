@@ -1,0 +1,426 @@
+{
+  "customers": [
+    {
+      "id": "C1001",
+      "name": "Maya Chen",
+      "email": "maya.chen@example.com",
+      "customer_since": "2024-03-11",
+      "vip": false
+    },
+    {
+      "id": "C1002",
+      "name": "Jordan Brooks",
+      "email": "jordan.brooks@example.com",
+      "customer_since": "2023-11-02",
+      "vip": true
+    },
+    {
+      "id": "C1003",
+      "name": "Priya Raman",
+      "email": "priya.raman@example.com",
+      "customer_since": "2025-01-20",
+      "vip": false
+    },
+    {
+      "id": "C1004",
+      "name": "Luis Ortega",
+      "email": "luis.ortega@example.com",
+      "customer_since": "2022-08-15",
+      "vip": true
+    },
+    {
+      "id": "C1005",
+      "name": "Hannah Weber",
+      "email": "hannah.weber@example.com",
+      "customer_since": "2025-06-04",
+      "vip": false
+    },
+    {
+      "id": "C1006",
+      "name": "Sam Okafor",
+      "email": "sam.okafor@example.com",
+      "customer_since": "2024-09-30",
+      "vip": false
+    },
+    {
+      "id": "C1007",
+      "name": "Emily Novak",
+      "email": "emily.novak@example.com",
+      "customer_since": "2023-04-18",
+      "vip": true
+    },
+    {
+      "id": "C1008",
+      "name": "Daniel Kim",
+      "email": "daniel.kim@example.com",
+      "customer_since": "2025-10-01",
+      "vip": false
+    },
+    {
+      "id": "C1009",
+      "name": "Aisha Malik",
+      "email": "aisha.malik@example.com",
+      "customer_since": "2024-12-12",
+      "vip": false
+    },
+    {
+      "id": "C1010",
+      "name": "Tom Fischer",
+      "email": "tom.fischer@example.com",
+      "customer_since": "2021-05-07",
+      "vip": true
+    },
+    {
+      "id": "C1011",
+      "name": "Grace Liu",
+      "email": "grace.liu@example.com",
+      "customer_since": "2026-02-14",
+      "vip": false
+    },
+    {
+      "id": "C1012",
+      "name": "Marco Rossi",
+      "email": "marco.rossi@example.com",
+      "customer_since": "2025-07-22",
+      "vip": false
+    }
+  ],
+  "orders": [
+    {
+      "id": "BL-48213",
+      "customer_id": "C1001",
+      "placed_at": "2026-10-28",
+      "status": "delivered",
+      "delivered_at": "2026-11-02",
+      "items": [
+        {
+          "sku": "AURORA-ESPRESSO-MA",
+          "name": "Aurora Espresso Machine",
+          "price": 649.0
+        },
+        {
+          "sku": "DESCALER-3-PACK",
+          "name": "Descaler 3-Pack",
+          "price": 24.0
+        }
+      ],
+      "total": 673.0,
+      "tracking_number": "1Z999AA10123456784",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48390",
+      "customer_id": "C1002",
+      "placed_at": "2026-11-03",
+      "status": "shipped",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "CASCADE-BURR-GRIND",
+          "name": "Cascade Burr Grinder",
+          "price": 229.0
+        }
+      ],
+      "total": 229.0,
+      "tracking_number": "1Z999AA10123456791",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48402",
+      "customer_id": "C1003",
+      "placed_at": "2026-11-04",
+      "status": "processing",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "POUR-OVER-KETTLE",
+          "name": "Pour-Over Kettle",
+          "price": 89.0
+        },
+        {
+          "sku": "ETHIOPIA-YIRGACHEF",
+          "name": "Ethiopia Yirgacheffe 12oz",
+          "price": 21.0
+        }
+      ],
+      "total": 110.0,
+      "tracking_number": null,
+      "carrier": null
+    },
+    {
+      "id": "BL-47755",
+      "customer_id": "C1004",
+      "placed_at": "2026-10-12",
+      "status": "delivered",
+      "delivered_at": "2026-10-16",
+      "items": [
+        {
+          "sku": "HOUSE-BLEND-2LB",
+          "name": "House Blend 2lb",
+          "price": 32.0
+        },
+        {
+          "sku": "HOUSE-BLEND-2LB",
+          "name": "House Blend 2lb",
+          "price": 32.0
+        }
+      ],
+      "total": 64.0,
+      "tracking_number": "9400111202555842761234",
+      "carrier": "USPS"
+    },
+    {
+      "id": "BL-48120",
+      "customer_id": "C1005",
+      "placed_at": "2026-10-25",
+      "status": "delivered",
+      "delivered_at": "2026-10-29",
+      "items": [
+        {
+          "sku": "CASCADE-BURR-GRIND",
+          "name": "Cascade Burr Grinder",
+          "price": 229.0
+        },
+        {
+          "sku": "MILK-PITCHER",
+          "name": "Milk Pitcher",
+          "price": 19.0
+        }
+      ],
+      "total": 248.0,
+      "tracking_number": "1Z999AA10123456805",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48455",
+      "customer_id": "C1006",
+      "placed_at": "2026-11-05",
+      "status": "processing",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "TAMPER-SET",
+          "name": "Tamper Set",
+          "price": 45.0
+        }
+      ],
+      "total": 45.0,
+      "tracking_number": null,
+      "carrier": null
+    },
+    {
+      "id": "BL-47002",
+      "customer_id": "C1007",
+      "placed_at": "2026-09-02",
+      "status": "delivered",
+      "delivered_at": "2026-09-06",
+      "items": [
+        {
+          "sku": "AURORA-ESPRESSO-MA",
+          "name": "Aurora Espresso Machine",
+          "price": 649.0
+        }
+      ],
+      "total": 649.0,
+      "tracking_number": "1Z999AA10123456812",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48301",
+      "customer_id": "C1007",
+      "placed_at": "2026-11-01",
+      "status": "shipped",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "DESCALER-3-PACK",
+          "name": "Descaler 3-Pack",
+          "price": 24.0
+        },
+        {
+          "sku": "MILK-PITCHER",
+          "name": "Milk Pitcher",
+          "price": 19.0
+        }
+      ],
+      "total": 43.0,
+      "tracking_number": "9400111202555842769876",
+      "carrier": "USPS"
+    },
+    {
+      "id": "BL-48177",
+      "customer_id": "C1008",
+      "placed_at": "2026-10-27",
+      "status": "delivered",
+      "delivered_at": "2026-10-31",
+      "items": [
+        {
+          "sku": "POUR-OVER-KETTLE",
+          "name": "Pour-Over Kettle",
+          "price": 89.0
+        }
+      ],
+      "total": 89.0,
+      "tracking_number": "1Z999AA10123456829",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-46511",
+      "customer_id": "C1009",
+      "placed_at": "2026-08-14",
+      "status": "delivered",
+      "delivered_at": "2026-08-19",
+      "items": [
+        {
+          "sku": "CASCADE-BURR-GRIND",
+          "name": "Cascade Burr Grinder",
+          "price": 229.0
+        }
+      ],
+      "total": 229.0,
+      "tracking_number": "1Z999AA10123456836",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48333",
+      "customer_id": "C1009",
+      "placed_at": "2026-11-02",
+      "status": "shipped",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "ETHIOPIA-YIRGACHEF",
+          "name": "Ethiopia Yirgacheffe 12oz",
+          "price": 21.0
+        },
+        {
+          "sku": "ETHIOPIA-YIRGACHEF",
+          "name": "Ethiopia Yirgacheffe 12oz",
+          "price": 21.0
+        }
+      ],
+      "total": 42.0,
+      "tracking_number": "9400111202555842764444",
+      "carrier": "USPS"
+    },
+    {
+      "id": "BL-45120",
+      "customer_id": "C1010",
+      "placed_at": "2026-06-03",
+      "status": "delivered",
+      "delivered_at": "2026-06-07",
+      "items": [
+        {
+          "sku": "AURORA-ESPRESSO-MA",
+          "name": "Aurora Espresso Machine",
+          "price": 649.0
+        },
+        {
+          "sku": "TAMPER-SET",
+          "name": "Tamper Set",
+          "price": 45.0
+        }
+      ],
+      "total": 694.0,
+      "tracking_number": "1Z999AA10123456843",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48288",
+      "customer_id": "C1010",
+      "placed_at": "2026-11-01",
+      "status": "delivered",
+      "delivered_at": "2026-11-05",
+      "items": [
+        {
+          "sku": "MONTHLY-SUBSCRIPTI",
+          "name": "Monthly Subscription Box",
+          "price": 28.0
+        }
+      ],
+      "total": 28.0,
+      "tracking_number": "9400111202555842761111",
+      "carrier": "USPS"
+    },
+    {
+      "id": "BL-48444",
+      "customer_id": "C1011",
+      "placed_at": "2026-11-05",
+      "status": "processing",
+      "delivered_at": null,
+      "items": [
+        {
+          "sku": "AURORA-ESPRESSO-MA",
+          "name": "Aurora Espresso Machine",
+          "price": 649.0
+        },
+        {
+          "sku": "CASCADE-BURR-GRIND",
+          "name": "Cascade Burr Grinder",
+          "price": 229.0
+        }
+      ],
+      "total": 878.0,
+      "tracking_number": null,
+      "carrier": null
+    },
+    {
+      "id": "BL-48099",
+      "customer_id": "C1012",
+      "placed_at": "2026-10-24",
+      "status": "returned",
+      "delivered_at": "2026-10-28",
+      "items": [
+        {
+          "sku": "POUR-OVER-KETTLE",
+          "name": "Pour-Over Kettle",
+          "price": 89.0
+        }
+      ],
+      "total": 89.0,
+      "tracking_number": "1Z999AA10123456850",
+      "carrier": "UPS"
+    },
+    {
+      "id": "BL-48260",
+      "customer_id": "C1012",
+      "placed_at": "2026-10-31",
+      "status": "delivered",
+      "delivered_at": "2026-11-04",
+      "items": [
+        {
+          "sku": "HOUSE-BLEND-2LB",
+          "name": "House Blend 2lb",
+          "price": 32.0
+        }
+      ],
+      "total": 32.0,
+      "tracking_number": "9400111202555842762222",
+      "carrier": "USPS"
+    }
+  ],
+  "subscriptions": [
+    {
+      "customer_id": "C1010",
+      "plan": "Monthly Subscription Box",
+      "status": "active",
+      "next_ship_date": "2026-12-01",
+      "price": 28.0
+    },
+    {
+      "customer_id": "C1002",
+      "plan": "Monthly Subscription Box",
+      "status": "canceled",
+      "next_ship_date": null,
+      "price": 28.0,
+      "canceled_at": "2026-10-20"
+    },
+    {
+      "customer_id": "C1007",
+      "plan": "Monthly Subscription Box",
+      "status": "paused",
+      "next_ship_date": "2027-01-01",
+      "price": 28.0
+    }
+  ]
+}

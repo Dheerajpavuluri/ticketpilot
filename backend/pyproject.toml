@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ticketpilot"
+version = "0.1.0"
+description = "AI support agent that triages tickets, looks up orders, drafts grounded replies and escalates risky cases"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Dheeraj Pavuluri" }]
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.29",
+    "sqlalchemy>=2.0",
+    "pydantic[email]>=2.6",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+queue = ["taskforge @ git+https://github.com/Dheerajpavuluri/taskforge@main"]
+postgres = ["psycopg[binary]>=3.1"]
+dev = ["pytest>=8", "respx>=0.21", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+
+[tool.setuptools.package-data]
+app = ["seed/*.json", "seed/help_center/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.Depends", "fastapi.Query"]
