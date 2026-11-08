@@ -5,8 +5,8 @@
 ![React](https://img.shields.io/badge/react-18-61dafb)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-**Live demo: [ticketpilot-03bi.onrender.com](https://ticketpilot-03bi.onrender.com)**: click *Load demo tickets* to watch the agent work the queue.
-(Free hosting sleeps when idle, so the first load can take about a minute. The demo runs the offline rules engine, no API key.)
+**Live demo:** [ticketpilot-03bi.onrender.com](https://ticketpilot-03bi.onrender.com). Click **Load demo tickets** to watch the agent work the queue.
+*The demo runs keyless on the built-in rules engine; add an OpenAI or Anthropic key to use a real model. Free hosting sleeps when idle, so the first load can take up to a minute.*
 
 An AI support agent that works a real ticket queue. For every incoming ticket it looks up the
 customer and their orders, searches the help center, opens refunds when policy allows, and
