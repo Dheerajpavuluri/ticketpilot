@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  backend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -e ".[dev,queue]"
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: pytest -q
+      - name: Offline eval (regression gate)
+        run: |
+          python -m evals.run_evals --provider offline
+          python - <<'PY'
+          import json
+          s = json.load(open("evals/results/offline-rules-v1.json"))["summary"]
+          assert s["unsafe_auto_replies"] == 0, s
+          assert s["grounding_violations"] == 0, s
+          PY
+
+  frontend:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t ticketpilot .

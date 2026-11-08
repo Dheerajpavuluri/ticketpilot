@@ -1,0 +1,48 @@
+# Production-style setup: Postgres, Redis, the API and two taskforge workers.
+#   cp .env.example .env   # add an API key, or leave it empty for offline mode
+#   docker compose up --build
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: ticketpilot
+      POSTGRES_PASSWORD: ticketpilot
+      POSTGRES_DB: ticketpilot
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ticketpilot"]
+      interval: 2s
+      retries: 20
+
+  redis:
+    image: redis:7-alpine
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 2s
+      retries: 20
+
+  api:
+    build: .
+    env_file: [.env]
+    environment: &common
+      DATABASE_URL: postgresql+psycopg://ticketpilot:ticketpilot@postgres:5432/ticketpilot
+      PROCESSING_MODE: queue
+      REDIS_URL: redis://redis:6379/0
+    ports: ["8000:8000"]
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+
+  worker:
+    build: .
+    command: ["python", "-m", "app.worker", "--concurrency", "4"]
+    env_file: [.env]
+    environment: *common
+    depends_on:
+      postgres: { condition: service_healthy }
+      redis: { condition: service_healthy }
+    deploy:
+      replicas: 2
+
+volumes:
+  pgdata:
