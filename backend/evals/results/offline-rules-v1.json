@@ -1,0 +1,1217 @@
+{
+  "summary": {
+    "provider": "offline",
+    "model": "rules-v1",
+    "tickets": 36,
+    "failed_runs": 0,
+    "category_accuracy": 88.9,
+    "priority_accuracy": 80.6,
+    "priority_within_one": 100.0,
+    "escalation_precision": 43.8,
+    "escalation_recall": 100.0,
+    "escalation_f1": 60.9,
+    "unsafe_auto_replies": 0,
+    "order_id_accuracy": 95.8,
+    "citation_hit_rate": 74.3,
+    "grounding_violations": 0,
+    "auto_resolve_rate": 55.6,
+    "latency_p50_ms": 8,
+    "latency_p95_ms": 10,
+    "avg_tokens": 0
+  },
+  "misses": [
+    {
+      "id": "T-004",
+      "subject": "Beans taste stale",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-006",
+      "subject": "Cancel my order",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "got": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-008",
+      "subject": "Kettle not heating",
+      "expected": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false
+      },
+      "got": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-011",
+      "subject": "Charged after canceling",
+      "expected": {
+        "category": "subscription",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "got": {
+        "category": "billing",
+        "priority": "low",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-013",
+      "subject": "Refund status",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-016",
+      "subject": "Tracking for descaler",
+      "expected": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false
+      },
+      "got": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "error": null
+    },
+    {
+      "id": "T-028",
+      "subject": "Wrong beans in box",
+      "expected": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false
+      },
+      "got": {
+        "category": "subscription",
+        "priority": "medium",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-033",
+      "subject": "Update payment method",
+      "expected": {
+        "category": "account",
+        "priority": "low",
+        "needs_human": false
+      },
+      "got": {
+        "category": "billing",
+        "priority": "low",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-034",
+      "subject": "Wrong kettle color",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "low",
+        "needs_human": false
+      },
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true
+      },
+      "error": null
+    },
+    {
+      "id": "T-036",
+      "subject": "Hi",
+      "expected": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": false
+      },
+      "got": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": true
+      },
+      "error": null
+    }
+  ],
+  "results": [
+    {
+      "id": "T-001",
+      "subject": "Machine leaking water",
+      "expected": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48213",
+        "article": "warranty"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48213",
+        "citations": [
+          "descaling"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 19,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-002",
+      "subject": "Where is my grinder?",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48390",
+        "article": "track-order"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48390",
+        "citations": [
+          "track-order"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-003",
+      "subject": "Change address before it ships",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48402",
+        "article": "change-address"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48402",
+        "citations": [
+          "change-address"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-004",
+      "subject": "Beans taste stale",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-47755",
+        "article": "returns-policy"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-47755",
+        "citations": [
+          "beans-freshness"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-005",
+      "subject": "Refund for grinder",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48120",
+        "article": "returns-policy"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48120",
+        "citations": [
+          "returns-policy"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "refund of $229.00 exceeds $100 auto-approve limit"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 9,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-006",
+      "subject": "Cancel my order",
+      "expected": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48455",
+        "article": "change-address"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48455",
+        "citations": [
+          "subscriptions"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-007",
+      "subject": "Machine sparking!!",
+      "expected": {
+        "category": "product_issue",
+        "priority": "urgent",
+        "needs_human": true,
+        "order_id": "BL-47002",
+        "article": "warranty"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "urgent",
+        "needs_human": true,
+        "order_id": "BL-47002",
+        "citations": [
+          "descaling"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "possible safety hazard reported"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-008",
+      "subject": "Kettle not heating",
+      "expected": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48177",
+        "article": "warranty"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": true,
+        "order_id": "BL-48177",
+        "citations": [
+          "beans-freshness"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-009",
+      "subject": "Grinder making noise, no grounds",
+      "expected": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-46511",
+        "article": "grinder-calibration"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-46511",
+        "citations": [
+          "grinder-calibration"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-010",
+      "subject": "Skip next box",
+      "expected": {
+        "category": "subscription",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "subscriptions"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "subscription",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "subscriptions"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-011",
+      "subject": "Charged after canceling",
+      "expected": {
+        "category": "subscription",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": null,
+        "article": "subscriptions"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "billing",
+        "priority": "low",
+        "needs_human": true,
+        "order_id": null,
+        "citations": [
+          "subscriptions"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-012",
+      "subject": "Double charged",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "needs_human": true,
+        "order_id": "BL-48444",
+        "article": "billing"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "billing",
+        "priority": "high",
+        "needs_human": true,
+        "order_id": "BL-48444",
+        "citations": [
+          "billing"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "refund of $878.00 exceeds $100 auto-approve limit"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-013",
+      "subject": "Refund status",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48099",
+        "article": "returns-policy"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48099",
+        "citations": [
+          "billing"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-014",
+      "subject": "Opened a dispute",
+      "expected": {
+        "category": "billing",
+        "priority": "high",
+        "needs_human": true,
+        "order_id": "BL-48260",
+        "article": "billing"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "billing",
+        "priority": "high",
+        "needs_human": true,
+        "order_id": "BL-48260",
+        "citations": [
+          "billing"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "legal threat or payment dispute"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-015",
+      "subject": "How often to descale?",
+      "expected": {
+        "category": "product_issue",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "descaling"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-48213",
+        "citations": [
+          "descaling"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-016",
+      "subject": "Tracking for descaler",
+      "expected": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-48301",
+        "article": "track-order"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48301",
+        "citations": [
+          "descaling"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-017",
+      "subject": "Package says delivered but nothing",
+      "expected": {
+        "category": "shipping",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48333",
+        "article": "track-order"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48333",
+        "citations": [
+          "track-order"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-018",
+      "subject": "Weak pressure on my Aurora",
+      "expected": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-45120",
+        "article": "descaling"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-45120",
+        "citations": [
+          "descaling"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-019",
+      "subject": "Reset password",
+      "expected": {
+        "category": "account",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "account"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "account",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "account"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 9,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-020",
+      "subject": "Delete my account",
+      "expected": {
+        "category": "account",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": null,
+        "article": "account"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "account",
+        "priority": "low",
+        "needs_human": true,
+        "order_id": null,
+        "citations": [
+          "account"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "account/data deletion needs identity verification"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 9,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-021",
+      "subject": "Do you ship to Canada?",
+      "expected": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "shipping-times"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "shipping-times"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 10,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-022",
+      "subject": "Expedited shipping",
+      "expected": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "shipping-times"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "shipping-times"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 9,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-023",
+      "subject": "Shots too sour",
+      "expected": {
+        "category": "product_issue",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "grinder-calibration"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "grinder-calibration"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 10,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-024",
+      "subject": "Best way to store beans",
+      "expected": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "beans-freshness"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "beans-freshness"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 9,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-025",
+      "subject": "Box was crushed",
+      "expected": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48213",
+        "article": "damaged-item"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48213",
+        "citations": [
+          "damaged-item"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 10,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-026",
+      "subject": "Return grinder when it arrives",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48390",
+        "article": "returns-policy"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48390",
+        "citations": [
+          "returns-policy"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "refund of $229.00 exceeds $100 auto-approve limit"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 10,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-027",
+      "subject": "Pause subscription",
+      "expected": {
+        "category": "subscription",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "subscriptions"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "subscription",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "subscriptions"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 10,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-028",
+      "subject": "Wrong beans in box",
+      "expected": {
+        "category": "product_issue",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48288",
+        "article": "damaged-item"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "subscription",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48288",
+        "citations": [
+          "damaged-item"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-029",
+      "subject": "Lawyer",
+      "expected": {
+        "category": "product_issue",
+        "priority": "urgent",
+        "needs_human": true,
+        "order_id": "BL-46511",
+        "article": "warranty"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "urgent",
+        "needs_human": true,
+        "order_id": "BL-46511",
+        "citations": [
+          "grinder-calibration"
+        ],
+        "confidence": 0.85,
+        "reasons": [
+          "possible safety hazard reported",
+          "legal threat or payment dispute"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-030",
+      "subject": "Return kettle",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48177",
+        "article": "returns-policy"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48177",
+        "citations": [
+          "returns-policy"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-031",
+      "subject": "When will my order ship?",
+      "expected": {
+        "category": "shipping",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-48444",
+        "article": "shipping-times"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "shipping",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": "BL-48444",
+        "citations": [
+          "shipping-times"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-032",
+      "subject": "Temporary charge?",
+      "expected": {
+        "category": "billing",
+        "priority": "medium",
+        "needs_human": false,
+        "order_id": null,
+        "article": "billing"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "billing",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "citations": [
+          "billing"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-033",
+      "subject": "Update payment method",
+      "expected": {
+        "category": "account",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": null,
+        "article": "account"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "billing",
+        "priority": "low",
+        "needs_human": true,
+        "order_id": null,
+        "citations": [
+          "account"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 6,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-034",
+      "subject": "Wrong kettle color",
+      "expected": {
+        "category": "returns_refunds",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-48402",
+        "article": "returns-policy"
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "returns_refunds",
+        "priority": "medium",
+        "needs_human": true,
+        "order_id": "BL-48402",
+        "citations": [
+          "damaged-item"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-035",
+      "subject": "Milk pitcher dented",
+      "expected": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48120",
+        "article": "damaged-item"
+      },
+      "status": "auto_resolved",
+      "error": null,
+      "got": {
+        "category": "product_issue",
+        "priority": "high",
+        "needs_human": false,
+        "order_id": "BL-48120",
+        "citations": [
+          "damaged-item"
+        ],
+        "confidence": 0.85,
+        "reasons": [],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 8,
+      "model": "rules-v1"
+    },
+    {
+      "id": "T-036",
+      "subject": "Hi",
+      "expected": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": false,
+        "order_id": "BL-48455",
+        "article": null
+      },
+      "status": "needs_review",
+      "error": null,
+      "got": {
+        "category": "general",
+        "priority": "low",
+        "needs_human": true,
+        "order_id": null,
+        "citations": [
+          "damaged-item"
+        ],
+        "confidence": 0.6,
+        "reasons": [
+          "low confidence (0.60)"
+        ],
+        "input_tokens": 0,
+        "output_tokens": 0
+      },
+      "latency_ms": 7,
+      "model": "rules-v1"
+    }
+  ]
+}
