@@ -21,4 +21,5 @@ RUN useradd --create-home --uid 1000 app && mkdir -p /data && chown app /data
 USER app
 ENV DATABASE_URL=sqlite:////data/ticketpilot.db
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Render and similar hosts pass the port in $PORT
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

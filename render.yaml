@@ -1,0 +1,20 @@
+# One-click deploy on Render: New > Blueprint > pick this repo.
+# Runs as a single web service in inline mode. Without an API key it uses the
+# offline rules engine; add ANTHROPIC_API_KEY or OPENAI_API_KEY in the dashboard
+# to use a real model. The free plan's disk is ephemeral, so the SQLite demo
+# data resets on each deploy.
+services:
+  - type: web
+    name: ticketpilot
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    envVars:
+      - key: PROCESSING_MODE
+        value: inline
+      - key: TODAY
+        value: "2026-11-06"
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false
